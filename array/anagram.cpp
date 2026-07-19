@@ -1,4 +1,4 @@
-class Solution {
+FIRST APP:class Solution {
 public:
     bool isAnagram(string s, string t) {
         sort(s.begin(),s.end());
@@ -9,4 +9,29 @@ public:
         return false;
     }
 
+};
+SECOND APP:class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        vector<int>result(26,0);
+        if(s.length()!=t.length()){
+            return false;
+        }
+        for(int i=0; i<s.length(); i++){
+            char ch =s[i];
+           result[ch-'a']++;
+        }
+            for(int i=0;i<t.length(); i++){
+                char ch =t[i];
+               if(result[ch-'a']>0){
+                    result[ch-'a']--;
+               }
+               else{
+                return false;
+               }
+              
+               
+            }
+            return true;
+    }
 };
