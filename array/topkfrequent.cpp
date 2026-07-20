@@ -7,13 +7,13 @@ typedef pair<int,int>P;
         for(int &num:nums){
             mp[num]++;
         }
-        priority_queue<P,vector<P>,greater<P>>pq;
-        for(auto &it:mp){
+        priority_queue<P,vector<P>,greater<P>>pq;0(nlogk)
+        for(auto &it:mp){//0(n)
             int x =it.first;
             int y =it.second;
             pq.push({y,x});
             if(pq.size()>k){
-                pq.pop();
+                pq.pop();0(logk)
             }
         }
         vector<int>result;
