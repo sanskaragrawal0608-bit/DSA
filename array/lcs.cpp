@@ -27,3 +27,30 @@ return false;
         return len;
     }
 };
+
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int len=1;
+        int currele = INT_MIN;
+       int count=1;
+       if(nums.size()==0){
+        return 0;
+       }
+        for(int i=0; i<nums.size(); i++){
+             
+                if(nums[i]-1==currele){
+                        count++;
+                        currele =nums[i];
+                      len =max(len,count);
+                }
+                else if(nums[i]!=currele){
+                    currele = nums[i];
+                    count=1;
+                }
+                  
+        }
+        return len;
+    }
+};
