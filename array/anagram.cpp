@@ -23,12 +23,10 @@ public:
         }
             for(int i=0;i<t.length(); i++){
                 char ch =t[i];
-               if(result[ch-'a']>0){
-                    result[ch-'a']--;
-               }
-               else{
+              result[ch-'a']--;
+              if(result[ch-'a']<0){
                 return false;
-               }
+              }
               
                
             }
